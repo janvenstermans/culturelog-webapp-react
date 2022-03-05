@@ -1,23 +1,16 @@
 import logo from './logo.svg';
 import './App.css';
+import Experiences from './components/Experiences';
+import { useState } from 'react';
 
 function App() {
+  const [experiences, setExperiences] = useState([
+    {id:1, type: 'film', medium:'DVD', name: 'Mephisto', date:'1.3.2022'},
+    {id:2, type: 'theater', medium:'Pedrolino', name: 'Pierke', date:'5.3.2022'},
+  ]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Experiences experiences={experiences}></Experiences>
     </div>
   );
 }
