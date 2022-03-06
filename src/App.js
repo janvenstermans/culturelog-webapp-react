@@ -1,17 +1,24 @@
-import logo from './logo.svg';
+import {
+  Link, Outlet
+} from "react-router-dom";
 import './App.css';
-import Experiences from './components/Experiences';
-import { useState } from 'react';
 
 function App() {
-  const [experiences, setExperiences] = useState([
-    {id:1, type: 'film', medium:'DVD', name: 'Mephisto', date:'1.3.2022'},
-    {id:2, type: 'theater', medium:'Pedrolino', name: 'Pierke', date:'5.3.2022'},
-  ]);
   return (
-    <div className="App">
-      <Experiences experiences={experiences}></Experiences>
-    </div>
+    <>
+      <div>
+        <nav style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+        }}>
+
+          <Link to="/experiences">Experiences</Link>
+        </nav>
+      </div>
+      <div className="App">
+        <Outlet/>
+      </div>
+    </>
   );
 }
 
